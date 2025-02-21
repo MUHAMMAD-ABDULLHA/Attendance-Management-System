@@ -29,10 +29,10 @@ class AuthService with ChangeNotifier {
       notifyListeners(); // Notify listeners after registration
     } on FirebaseAuthException catch (e) {
       print("Registration Error: ${e.code} - ${e.message}");
-      throw e;
+      rethrow;
     } catch (e) {
       print("Unexpected Error: $e");
-      throw e;
+      rethrow;
     }
   }
 
@@ -46,10 +46,10 @@ class AuthService with ChangeNotifier {
       notifyListeners(); // Notify listeners after login
     } on FirebaseAuthException catch (e) {
       print("Login Error: ${e.code} - ${e.message}");
-      throw e;
+      rethrow;
     } catch (e) {
       print("Unexpected Error: $e");
-      throw e;
+      rethrow;
     }
   }
 
